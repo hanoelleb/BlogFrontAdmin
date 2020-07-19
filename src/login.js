@@ -37,23 +37,26 @@ class LoginForm extends React.Component {
     }
 
     render() {
+        var isInvalid = this.username === '' ||
+		        this.password === '';
+
         return (
 	<div>
             <form className={styles.form} onSubmit={this.handleSubmit}>
 		<h2>Login</h2>
 		<input type='text' placeholder='Username' name='username'
-                    value={this.state.username} 
-		    onChange={this.state.handleChange}
+		    onChange={this.handleChange}
+		    value={this.state.username}
 		>
 		</input>
 
 		<input type='password' placeholder='Password' name='password'
-                    value={this.state.password}
-		    onChange={this.state.handleChange}
+		    onChange={this.handleChange}
+	            value={this.state.password}
 		>
 		</input>
 
-		<input type='submit' value='Login'>
+		<input type='submit' value='Login' disabled={isInvalid}>
 		</input>
             </form>		
 	    <Link to='/register'>No account? Register</Link>

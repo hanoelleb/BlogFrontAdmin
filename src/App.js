@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import './App.css';
-import * as ROUTES from '../constants/routes';
+import * as ROUTES from './constants/routes';
 import LoginForm from './login';
 import RegisterForm from './register';
 import Blog from './blog';

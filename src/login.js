@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 import styles from './form.module.css';
 
 class LoginForm extends React.Component {
@@ -7,7 +8,7 @@ class LoginForm extends React.Component {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-	this.state = ({username: '', password: ''});
+	this.state = ({username: '', password: '', redirect: false});
     }
 
     handleSubmit(event) {
@@ -28,7 +29,9 @@ class LoginForm extends React.Component {
             body: JSON.stringify(message)})
                 .then(response => response.json())
                 .then( data => {
-                    console.log('message: ' + data.message);
+		    localStorage.setItem('token', data.token);
+                    console.log(localStorage.getItem('token'));
+		    this.setState({redirect: true});
                 });
     }
 
@@ -40,6 +43,8 @@ class LoginForm extends React.Component {
         var isInvalid = this.username === '' ||
 		        this.password === '';
 
+	if (this.state.redirect) 
+	    return < Redirect to='/blog' />
         return (
 	<div>
             <form className={styles.form} onSubmit={this.handleSubmit}>

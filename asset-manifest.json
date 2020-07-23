@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/BlogFrontAdmin/static/css/main.5ad99a02.chunk.css",
-    "main.js": "/BlogFrontAdmin/static/js/main.c1b29b1b.chunk.js",
-    "main.js.map": "/BlogFrontAdmin/static/js/main.c1b29b1b.chunk.js.map",
+    "main.js": "/BlogFrontAdmin/static/js/main.755957d4.chunk.js",
+    "main.js.map": "/BlogFrontAdmin/static/js/main.755957d4.chunk.js.map",
     "runtime-main.js": "/BlogFrontAdmin/static/js/runtime-main.61feb4bf.js",
     "runtime-main.js.map": "/BlogFrontAdmin/static/js/runtime-main.61feb4bf.js.map",
     "static/js/2.9cf1b434.chunk.js": "/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js",
     "static/js/2.9cf1b434.chunk.js.map": "/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js.map",
     "index.html": "/BlogFrontAdmin/index.html",
-    "precache-manifest.b4c05e166bf7bbc8c788d693f36d073a.js": "/BlogFrontAdmin/precache-manifest.b4c05e166bf7bbc8c788d693f36d073a.js",
+    "precache-manifest.81cf147ee175e5b17eb635e19ca9460e.js": "/BlogFrontAdmin/precache-manifest.81cf147ee175e5b17eb635e19ca9460e.js",
     "service-worker.js": "/BlogFrontAdmin/service-worker.js",
     "static/css/main.5ad99a02.chunk.css.map": "/BlogFrontAdmin/static/css/main.5ad99a02.chunk.css.map",
     "static/js/2.9cf1b434.chunk.js.LICENSE.txt": "/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.61feb4bf.js",
     "static/js/2.9cf1b434.chunk.js",
     "static/css/main.5ad99a02.chunk.css",
-    "static/js/main.c1b29b1b.chunk.js"
+    "static/js/main.755957d4.chunk.js"
   ]
 }

@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/hanoelleb/BlogFrontAdmin/static/css/main.5ad99a02.chunk.css",
-    "main.js": "/hanoelleb/BlogFrontAdmin/static/js/main.4ae65232.chunk.js",
-    "main.js.map": "/hanoelleb/BlogFrontAdmin/static/js/main.4ae65232.chunk.js.map",
-    "runtime-main.js": "/hanoelleb/BlogFrontAdmin/static/js/runtime-main.e328b89f.js",
-    "runtime-main.js.map": "/hanoelleb/BlogFrontAdmin/static/js/runtime-main.e328b89f.js.map",
-    "static/js/2.9cf1b434.chunk.js": "/hanoelleb/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js",
-    "static/js/2.9cf1b434.chunk.js.map": "/hanoelleb/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js.map",
-    "index.html": "/hanoelleb/BlogFrontAdmin/index.html",
-    "precache-manifest.c5c29c6cfdc6c5b87b898b66d7285bbc.js": "/hanoelleb/BlogFrontAdmin/precache-manifest.c5c29c6cfdc6c5b87b898b66d7285bbc.js",
-    "service-worker.js": "/hanoelleb/BlogFrontAdmin/service-worker.js",
-    "static/css/main.5ad99a02.chunk.css.map": "/hanoelleb/BlogFrontAdmin/static/css/main.5ad99a02.chunk.css.map",
-    "static/js/2.9cf1b434.chunk.js.LICENSE.txt": "/hanoelleb/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js.LICENSE.txt"
+    "main.css": "/BlogFrontAdmin/static/css/main.5ad99a02.chunk.css",
+    "main.js": "/BlogFrontAdmin/static/js/main.c1b29b1b.chunk.js",
+    "main.js.map": "/BlogFrontAdmin/static/js/main.c1b29b1b.chunk.js.map",
+    "runtime-main.js": "/BlogFrontAdmin/static/js/runtime-main.61feb4bf.js",
+    "runtime-main.js.map": "/BlogFrontAdmin/static/js/runtime-main.61feb4bf.js.map",
+    "static/js/2.9cf1b434.chunk.js": "/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js",
+    "static/js/2.9cf1b434.chunk.js.map": "/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js.map",
+    "index.html": "/BlogFrontAdmin/index.html",
+    "precache-manifest.b4c05e166bf7bbc8c788d693f36d073a.js": "/BlogFrontAdmin/precache-manifest.b4c05e166bf7bbc8c788d693f36d073a.js",
+    "service-worker.js": "/BlogFrontAdmin/service-worker.js",
+    "static/css/main.5ad99a02.chunk.css.map": "/BlogFrontAdmin/static/css/main.5ad99a02.chunk.css.map",
+    "static/js/2.9cf1b434.chunk.js.LICENSE.txt": "/BlogFrontAdmin/static/js/2.9cf1b434.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.e328b89f.js",
+    "static/js/runtime-main.61feb4bf.js",
     "static/js/2.9cf1b434.chunk.js",
     "static/css/main.5ad99a02.chunk.css",
-    "static/js/main.4ae65232.chunk.js"
+    "static/js/main.c1b29b1b.chunk.js"
   ]
 }

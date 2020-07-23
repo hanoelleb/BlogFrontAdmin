@@ -17,10 +17,12 @@ class LoginForm extends React.Component {
 	const message = {
 	    username: this.state.username,
             password: this.state.password
-	}
-
+	};
+        
+	var test = 'http://localhost:8080/';
+        var real = 'https://hanoelleb-blog-api.herokuapp.com/';
 	const response =
-            fetch('https://hanoelleb-blog-api.herokuapp.com/api/login', {
+            fetch(real + 'api/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

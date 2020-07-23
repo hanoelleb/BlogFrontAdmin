@@ -1,7 +1,8 @@
 
 .blog {
+   margin: 5vh;
    padding: 30px;
-   text-align: right;
+   text-align: left;
    border-radius: 5px;
    color: white;
    background-color: darkgrey

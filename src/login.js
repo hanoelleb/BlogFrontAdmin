@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
 		        this.password === '';
 
 	if (this.state.redirect) 
-	    return < Redirect to='/blog' />
+	    return < Redirect to='/BlogFrontAdmin/blog' />
         return (
 	<div>
             <form className={styles.form} onSubmit={this.handleSubmit}>
@@ -66,7 +66,7 @@ class LoginForm extends React.Component {
 		<input type='submit' value='Login' disabled={isInvalid}>
 		</input>
             </form>		
-	    <Link to='/register'>No account? Register</Link>
+	    <Link to='/BlogFrontAdmin/register'>No account? Register</Link>
 	</div>
 	)
     }

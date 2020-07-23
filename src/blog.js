@@ -22,7 +22,7 @@ class Blog extends React.Component {
     render() {
 	console.log(this.state.token);
 	if (this.state.token === '') {
-	    return < Redirect to='/' />
+	    return < Redirect to='/BlogFrontAdmin/' />
 	}
         return (
 	    <div>

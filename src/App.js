@@ -13,9 +13,9 @@ function App() {
     <div className="App">
       <header className="App-header">
 	  <Router>
-              <Route exact path={ROUTES.landing} component={LoginForm} />
-	      <Route path={ROUTES.register} component={RegisterForm} />
-	      <Route path={ROUTES.blog} component={Blog} />
+              <Route exact path={ROUTES.admin + ROUTES.landing} component={LoginForm} />
+	      <Route path={ROUTES.admin + ROUTES.register} component={RegisterForm} />
+	      <Route path={ROUTES.admin + ROUTES.blog} component={Blog} />
 	  </Router>
       </header>
     </div>

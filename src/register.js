@@ -62,7 +62,7 @@ class RegisterForm extends React.Component {
                 <input type='submit' value='Submit' disabled={isInvalid}>
 		</input>
             </form>
-	    <Link to='/'>Have an account?</Link>
+	    <Link to='/BlogFrontAdmin/'>Have an account?</Link>
 	</div>
         )
     }

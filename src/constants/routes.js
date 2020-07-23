@@ -1,3 +1,4 @@
+export const admin = '/BlogFrontAdmin';
 export const landing = '/';
 export const register = '/register';
 export const blog = '/blog';

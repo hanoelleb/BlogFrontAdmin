@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ed4270735e40ecbc447347f65dd97f8",
+    "revision": "80f4bbbc4e4cc92a00f5d85ae33c132a",
     "url": "/BlogFrontAdmin/index.html"
   },
   {
-    "revision": "27d2dab4f245e3303c5d",
+    "revision": "bc83ad0440079bc177e4",
     "url": "/BlogFrontAdmin/static/css/main.ec6003de.chunk.css"
   },
   {
-    "revision": "df4926c639955ebc2fa6",
-    "url": "/BlogFrontAdmin/static/js/2.09dca5ee.chunk.js"
+    "revision": "e22885dafd8c0a8e4c07",
+    "url": "/BlogFrontAdmin/static/js/2.f7ffb46b.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/BlogFrontAdmin/static/js/2.09dca5ee.chunk.js.LICENSE.txt"
+    "url": "/BlogFrontAdmin/static/js/2.f7ffb46b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "27d2dab4f245e3303c5d",
-    "url": "/BlogFrontAdmin/static/js/main.0249324d.chunk.js"
+    "revision": "bc83ad0440079bc177e4",
+    "url": "/BlogFrontAdmin/static/js/main.4f2c0053.chunk.js"
   },
   {
     "revision": "37e9e98e4584930f15d3",

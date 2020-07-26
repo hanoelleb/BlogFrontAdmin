@@ -13,6 +13,7 @@ class Page extends React.Component {
         super(props);
 	this.closeEdit = this.closeEdit.bind(this);
 	this.closeRemove =  this.closeRemove.bind(this);
+	this.getUpdate = this.getUpdate.bind(this);
 	this.state = ({waiting: true, edit: false, remove: false,
 	    title: '', content: '', id: ''
 	});
@@ -30,7 +31,7 @@ class Page extends React.Component {
 
         var test = 'http://localhost:8080/';
         var real = 'https://hanoelleb-blog-api.herokuapp.com/';
-        fetch(test + 'api/post/' + this.props.location.state.id, 
+        fetch(real + 'api/post/' + this.props.location.state.id, 
 	{
 	    headers: {
                 'Accept': 'application/json',
@@ -39,10 +40,29 @@ class Page extends React.Component {
 	})
             .then( response => response.json() )
             .then( data => {
-		console.log('data: ' + data);
-                this.setState({post: data.post, 
+                this.setState({ post: data.post,
                     comments: data.comments, 
                     waiting: false});
+            });
+
+    }
+
+    getUpdate() {
+        var real = 'https://hanoelleb-blog-api.herokuapp.com/';
+        fetch(real + 'api/post/' + this.props.location.state.id,
+        {
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        })
+            .then( response => response.json() )
+            .then( data => {
+                this.setState({post: data.post,
+                    title: data.post.title,
+                    content: data.post.content,
+                    comments: data.comments,
+                    edit: false });
             });
 
     }
@@ -78,6 +98,7 @@ class Page extends React.Component {
                   title={this.state.title}
 		  content={this.state.content}
                   id={this.state.id}
+		  handler={this.getUpdate}
 		/>
                   :
 		  null

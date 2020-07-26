@@ -23,7 +23,7 @@ class EditForm extends React.Component {
 	var test = 'http://localhost:8080/';
         var real = 'https://hanoelleb-blog-api.herokuapp.com/';
     
-        fetch(test + 'api/post/' + this.props.id + '/edit',
+        fetch(real + 'api/post/' + this.props.id + '/edit',
             {
                 method: 'POST',
                 headers: {
@@ -35,6 +35,8 @@ class EditForm extends React.Component {
             }).then( response => response.json())
 	      .then( data => {
 		  console.log(data.message);
+		  if (this.props.handler != null)
+		      this.props.handler();
 	    });
     }
 

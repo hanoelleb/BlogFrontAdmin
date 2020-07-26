@@ -149,17 +149,7 @@ class BlogPost extends React.Component {
     constructor(props) {
         super(props);
         this.openPostPage = this.openPostPage.bind(this);
-	this.closeEdit = this.closeEdit.bind(this);
-        this.closeRemove = this.closeRemove.bind(this);
-	this.state = ({toPost : false, edit: false, remove: false});
-    }
-
-    closeEdit() {
-        this.setState({edit: false});
-    }
-
-    closeRemove() {
-        this.setState({remove: false});
+	this.state = ({toPost : false});
     }
 
     openPostPage() {
@@ -175,38 +165,13 @@ class BlogPost extends React.Component {
 		     {this.props.post.title}
 		 </h2>
                  <p>{this.props.post.content}</p>
-
-	         <button 
-		      onClick={()=>{this.setState({edit: true})}}>
-                      Edit
-                 </button>
-
-	         <button
-                      onClick={()=>{this.setState({remove: true})}}>
-                      Remove
-                 </button>
-
-		 { this.state.edit ? 
-		 < EditForm
-		    title={this.props.post.title}
-		    content={this.props.post.content}
-		    handler={this.closeEdit} />
-	           :
-	           null
-		 }
-
-		 { this.state.remove ?
-		     < DeleteConfirm handler={this.closeRemove} />
-                    :
-                     null
-		 }
-	    </div>
+            </div>
 	  )} 
 	else {
           return (
              < Redirect to={{ 
 		  pathname: pageLink, 
-		  state: { id: this.props.post_id,
+		  state: { id: this.props.post._id,
 		           title: this.props.post.title,
 		           content: this.props.post.content } 
 	     }}/>

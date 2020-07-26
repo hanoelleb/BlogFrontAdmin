@@ -7,3 +7,7 @@
    color: white;
    background-color: darkgrey
 }
+
+.blog h2:hover {
+    color: hotpink
+}

@@ -11,3 +11,40 @@ form {
 form input {
     margin-bottom: 5px;
 }
+
+.delete {
+    background-color: white;
+    color: darkgray;
+    border-radius: 5px;
+    position: fixed;
+    left: 33vw;
+    top: 25vh;
+}
+
+.delete button {
+    background-color: darkgrey;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.delete input[type='submit'] {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.edit {
+    position: fixed;
+    left: 33vw;
+    top: 25vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}

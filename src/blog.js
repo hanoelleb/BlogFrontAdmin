@@ -1,5 +1,9 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+
+import EditForm from './edit'; 
+import DeleteConfirm from './delete';
+
 import styles from './blog.module.css';
 
 class Blog extends React.Component {
@@ -25,7 +29,7 @@ class Blog extends React.Component {
 	}
         return (
 	    <div>
-		<h2>Blog</h2>
+		<h2>Your Blog</h2>
 		<Dashboard />
 		{ this.state.waiting ? '' : 
 		    this.state.posts.map( post => 
@@ -145,7 +149,17 @@ class BlogPost extends React.Component {
     constructor(props) {
         super(props);
         this.openPostPage = this.openPostPage.bind(this);
-	this.state = ({toPost : false});
+	this.closeEdit = this.closeEdit.bind(this);
+        this.closeRemove = this.closeRemove.bind(this);
+	this.state = ({toPost : false, edit: false, remove: false});
+    }
+
+    closeEdit() {
+        this.setState({edit: false});
+    }
+
+    closeRemove() {
+        this.setState({remove: false});
     }
 
     openPostPage() {
@@ -156,11 +170,36 @@ class BlogPost extends React.Component {
 	var pageLink = '/BlogFrontAdmin/blog/post/' + this.props.post._id;
 	if (!this.state.toPost) {
           return (
-	    <div className={styles.blog} onClick={this.openPostPage}>
-	         <h2>{this.props.post.title}</h2>
+	    <div className={styles.blog}>
+	         <h2 onClick={this.openPostPage}>
+		     {this.props.post.title}
+		 </h2>
                  <p>{this.props.post.content}</p>
-	         <button>Edit</button>
-	         <button>Remove</button>
+
+	         <button 
+		      onClick={()=>{this.setState({edit: true})}}>
+                      Edit
+                 </button>
+
+	         <button
+                      onClick={()=>{this.setState({remove: true})}}>
+                      Remove
+                 </button>
+
+		 { this.state.edit ? 
+		 < EditForm
+		    title={this.props.post.title}
+		    content={this.props.post.content}
+		    handler={this.closeEdit} />
+	           :
+	           null
+		 }
+
+		 { this.state.remove ?
+		     < DeleteConfirm handler={this.closeRemove} />
+                    :
+                     null
+		 }
 	    </div>
 	  )} 
 	else {

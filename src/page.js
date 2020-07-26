@@ -112,15 +112,114 @@ class Page extends React.Component {
                   null
                 }
             </div>
-	    <CommentThread />
+	    <CommentThread comments={this.state.comments} 
+		handler={this.getUpdate} id={this.state.id}/>
 	</div>
 	)
     }
 }
 
 class CommentThread extends React.Component {
+     constructor(props) {
+        super(props);
+        this.state = ({openForm : false});
+    }
+
     render() {
-        return <h3>Comments</h3>
+        const pid = this.props.id;
+	const reloadhandler = this.props.handler;
+
+        return (
+          <div>
+            <h2>Comments</h2>
+            <div className='comments'>
+            {this.props.comments.length > 0 ?
+                 this.props.comments.map( function(comment, index) {
+                      return (
+			 <Comment comment={comment} key={index}
+			      id={pid} 
+			      handler={reloadhandler}/>
+                      )
+		 })
+                 :
+                 <h3>No comments on this post</h3>
+            }
+            </div>
+          </div>
+         )
+    }
+}
+
+class Comment extends React.Component {
+    constructor(props) {
+         super(props);
+	 this.handleDelete = this.handleDelete.bind(this);
+	 this.state = ({openForm: false});
+    }
+
+    closeForm() {
+        this.setState({openForm: false})
+    }
+
+    handleDelete() {
+        this.setState({openForm: false});
+	this.props.handler();
+    }
+
+    render() {
+        return (
+            <div className={styles.comment}>
+                <h3>{this.props.comment.author}</h3>
+                <p>{this.props.comment.content}</p>
+
+                <button 
+		   onClick={ ()=>{this.setState({openForm: true});} }>
+		   Delete
+		</button>
+                
+		{ this.state.openForm ?
+		    <CommentForm id={this.props.id} 
+		        cid={this.props.comment._id}
+			handler={this.handleDelete}/>
+                    :
+                    null
+		}
+            </div>
+	)}
+}
+
+class CommentForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+
+        var test = 'http://localhost:8080/';
+        var real = 'https://hanoelleb-blog-api.herokuapp.com/';
+
+        fetch(real + 'api/post/' + this.props.id + '/comment/' + this.props.cid + '/delete',
+        {
+            method: 'POST',
+            headers: {
+		'Authorization': localStorage.getItem('token'),
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+        }).then( response => response.json() )
+          .then( data => this.props.handler() )
+    }
+
+    render() {
+        return (
+          <form onSubmit={this.handleSubmit} className={styles.commentForm}>
+              <p>Are you sure you want to delete this comment?</p>
+              <button onClick={this.props.handler}>Cancel</button>
+              <input type='submit' value='Delete comment'></input>
+          </form>
+        )
     }
 }
 

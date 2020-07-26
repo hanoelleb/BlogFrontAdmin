@@ -20,7 +20,6 @@ class Blog extends React.Component {
     }
 
     render() {
-	console.log(this.state.token);
 	if (this.state.token === '') {
 	    return < Redirect to='/BlogFrontAdmin/' />
 	}
@@ -143,15 +142,36 @@ class PostForm extends React.Component {
 }
 
 class BlogPost extends React.Component {
+    constructor(props) {
+        super(props);
+        this.openPostPage = this.openPostPage.bind(this);
+	this.state = ({toPost : false});
+    }
+
+    openPostPage() {
+	this.setState({toPost: true});
+    }
+
     render() {
-        return (
-	<div className={styles.blog}>
-	    <h2>{this.props.post.title}</h2>
-            <p>{this.props.post.content}</p>
-	    <button>Edit</button>
-	    <button>Remove</button>
-	</div>
-	)
+	var pageLink = '/BlogFrontAdmin/blog/post/' + this.props.post._id;
+	if (!this.state.toPost) {
+          return (
+	    <div className={styles.blog} onClick={this.openPostPage}>
+	         <h2>{this.props.post.title}</h2>
+                 <p>{this.props.post.content}</p>
+	         <button>Edit</button>
+	         <button>Remove</button>
+	    </div>
+	  )} 
+	else {
+          return (
+             < Redirect to={{ 
+		  pathname: pageLink, 
+		  state: { id: this.props.post_id,
+		           title: this.props.post.title,
+		           content: this.props.post.content } 
+	     }}/>
+	  )}
     }
 }
 
